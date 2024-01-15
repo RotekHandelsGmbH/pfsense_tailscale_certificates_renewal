@@ -43,7 +43,10 @@ step-by-step guide:
        :align: center
 
     - create the entry for the certificate.
-      the ``common name`` needs to match the setting in ``config.sh``
+      the ``Descriptive name`` needs to match the setting in ``config.sh``
+    - the ``Certificate data`` is the certificate which can be extracted from the first block of the ``fullchain.pem``
+    - the ``Private key data`` is the private key
+
 
     .. image:: images/02_pfsense_certificate_create.png
        :alt: pfsense certificate create
@@ -58,7 +61,8 @@ step-by-step guide:
        :align: center
 
     - restart the webConfigurator, either by the pfSense console, or by calling
-      ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh`` again.
+    ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh``
+    again.
 
 
 -------
