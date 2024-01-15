@@ -40,8 +40,7 @@ step-by-step guide:
 
 .. image:: images/01_pfsense_certificate_authorities.png
    :alt: pfsense certificate authorities
-   :width: 300
-   :height: 200
+   :width: 600
 
 
 -------
