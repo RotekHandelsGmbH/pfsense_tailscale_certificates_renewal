@@ -3,10 +3,10 @@ pfsense_tailscale_certificates_renewal
 
 Shell scripts designed to install certificates that were not generated using pfSense's ``acme`` module.
 
-While there are proposed solutions that involve directly editing the ``config.xml`` file with scripts, it is important to note that modifying the config.xml
+While there are proposed solutions that involve directly editing the ``/conf/config.xml`` file with scripts, it is important to note that modifying the config.xml
 file directly is a delicate operation and should be approached with caution.
 
-If you choose to install such scripts, be sure to create a backup of the config.xml file before making any changes.
+If you choose to install such scripts, be sure to create a backup of the ``/conf/config.xml`` file before making any changes.
 
 Here, we install certificates from Tailscale, but you can customize these scripts for your
 specific application to import any other certificate. This process utilizes the ``acme-command.sh``
@@ -26,7 +26,7 @@ preparation:
     - install package ``acme`` on pfsense
 
 notes:
-    - please note that ``pfsense`` needs ``<LF>`` line endings in scripts, ``<CR><LF>`` will not work.
+    - please note that ``pfsense`` needs ``<LF>`` line endings in ``sh`` scripts, ``<CR><LF>`` will not work.
 
 step-by-step guide:
     - fill out the correct values in our `config.sh`
@@ -64,7 +64,8 @@ step-by-step guide:
     ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh``
     again.
 
-    - create a cron setting (see last line) :
+    - create a cron setting (see last line). You can even run it daily or weekly, since tailscale simply will deliver the same certificates if no renewal is
+due :
 
     .. image:: images/04_pfsense_certificate_cron.png
        :alt: pfsense certificate cron job
