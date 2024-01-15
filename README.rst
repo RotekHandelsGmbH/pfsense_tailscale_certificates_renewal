@@ -64,7 +64,7 @@ step-by-step guide:
     ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh``
     again.
 
-    - create a cron setting :
+    - create a cron setting (see last line) :
 
     .. image:: images/04_pfsense_certificate_cron.png
        :alt: pfsense certificate cron job
