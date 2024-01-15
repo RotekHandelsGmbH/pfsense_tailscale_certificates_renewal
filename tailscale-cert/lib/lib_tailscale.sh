@@ -7,13 +7,13 @@ fetch_tailscale_certificates_and_key() {
 	# parameter4: the full tailscale hostname, like <hostname>.tail<?????>.ts.net
 
   # shellcheck disable=SC2039
-	local pathdir_certificates=$1
+	local pathdir_certificates="$1"
 	# shellcheck disable=SC2039
-	local filename_fullchain_cert=$2
+	local filename_fullchain_cert="$2"
 	# shellcheck disable=SC2039
-	local filename_privatekey=$3
+	local filename_privatekey="$3"
 	# shellcheck disable=SC2039
-	local tailscale_hostname_fqdn=$4
+	local tailscale_hostname_fqdn="$4"
 
 	# shellcheck disable=SC2039
 	local path_fullchain_pem="$pathdir_certificates/$filename_fullchain_cert"
