@@ -35,12 +35,30 @@ step-by-step guide:
     - enter the shell on pfsense, and get root by ``su``
     - set permissions : ``chmod -R 0755 /usr/local/pkg/tailscale-cert``
     - fetch certificates : ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh``
-    - if You look now, the ``lets encrypt``  root and intermediate certificate should be visible in the web gui
+    - the ``lets encrypt``  root and intermediate certificate should be visible in the web gui
 
+    .. image:: images/01_pfsense_certificate_authorities.png
+       :alt: pfsense certificate authorities
+       :width: 800
+       :align: center
 
-.. image:: images/01_pfsense_certificate_authorities.png
-   :alt: pfsense certificate authorities
-   :width: 600
+    - create the entry for the certificate.
+      the ``common name`` needs to match the setting in ``config.sh``
+
+    .. image:: images/02_pfsense_certificate_create.png
+       :alt: pfsense certificate create
+       :width: 800
+       :align: center
+
+    - select Your certificate for the webConfigurator
+
+    .. image:: images/03_pfsense_certificate_webconfig.png
+       :alt: pfsense certificate webConfigurator
+       :width: 800
+       :align: center
+
+    - restart the webConfigurator, either by the pfSense console, or by calling
+      ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh`` again.
 
 
 -------
