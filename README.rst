@@ -35,7 +35,8 @@ step-by-step guide:
     - enter the shell on pfsense, and get root by ``su``
     - set permissions : ``chmod -R 0755 /usr/local/pkg/tailscale-cert``
     - fetch certificates : ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh``
-    - the ``lets encrypt``  root and intermediate certificate should be visible in the web gui
+
+    - the ``lets encrypt``  root and intermediate certificate should be now visible in the web gui:
 
     .. image:: images/01_pfsense_certificate_authorities.png
        :alt: pfsense certificate authorities
@@ -47,13 +48,12 @@ step-by-step guide:
     - the ``Certificate data`` is the certificate which can be extracted from the first block of the ``fullchain.pem``
     - the ``Private key data`` is the private key
 
-
     .. image:: images/02_pfsense_certificate_create.png
        :alt: pfsense certificate create
        :width: 800
        :align: center
 
-    - select Your certificate for the webConfigurator
+    - select Your certificate for the webConfigurator:
 
     .. image:: images/03_pfsense_certificate_webconfig.png
        :alt: pfsense certificate webConfigurator
@@ -63,6 +63,14 @@ step-by-step guide:
     - restart the webConfigurator, either by the pfSense console, or by calling
     ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh``
     again.
+
+    - create a cron setting :
+
+    .. image:: images/04_pfsense_certificate_cron.png
+       :alt: pfsense certificate cron job
+       :width: 800
+       :align: center
+
 
 
 -------
