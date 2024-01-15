@@ -6,12 +6,18 @@ fetch_tailscale_certificates_and_key() {
 	# parameter3: filename_privatekey; the filename of the private key, like <tailscale_domain>_private_key.key
 	# parameter4: the full tailscale hostname, like <hostname>.tail<?????>.ts.net
 
+  # shellcheck disable=SC2039
 	local pathdir_certificates=$1
+	# shellcheck disable=SC2039
 	local filename_fullchain_cert=$2
+	# shellcheck disable=SC2039
 	local filename_privatekey=$3
+	# shellcheck disable=SC2039
 	local tailscale_hostname_fqdn=$4
-	
+
+	# shellcheck disable=SC2039
 	local path_fullchain_pem="$pathdir_certificates/$filename_fullchain_cert"
+	# shellcheck disable=SC2039
 	local path_privatekey_pem="$pathdir_certificates/$filename_privatekey"
 	
 	mkdir -p "$pathdir_certificates"

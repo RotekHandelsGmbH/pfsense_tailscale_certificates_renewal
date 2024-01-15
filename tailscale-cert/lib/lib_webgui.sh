@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 # make sure lineendings are only LF, not CRLF
 
 # restart webconfigurator after adding a new certificate

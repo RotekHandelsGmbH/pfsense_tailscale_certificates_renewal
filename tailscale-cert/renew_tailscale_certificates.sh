@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 # make sure lineendings are only LF, not CRLF
 
 # the certificate needs to be manually created, and will be updated via this script : 
@@ -30,12 +30,14 @@ log_header "renew"
 log_file_locations
 
 # fetch tailscale fullchain certificate and private key
+# shellcheck disable=SC2154
 fetch_tailscale_certificates_and_key "$pathdir_certificates" "$filename_fullchain_cert" "$filename_private_key" "$tailscale_hostname_fqdn" 2>&1 | tee -a "$logfile"
 
 # import the certificates into pfsence config
 # /usr/local/pkg/acme/acme_command.sh importcert $certificatename $tailscale_domain $path_privatekey_pem $path_fullchain_pem $path_fullchain_pem $path_fullchain_pem 2>&1 | tee -a "$logfile"
 # echo ""  | tee -a "$logfile"
-import_certificate_to_pfsense_config $certificatename $tailscale_domain $path_privatekey_pem $path_fullchain_pem $path_fullchain_pem $path_fullchain_pem 2>&1 | tee -a "$logfile"
+# shellcheck disable=SC2154
+import_certificate_to_pfsense_config "$certificatename" "$tailscale_domain" "$path_privatekey_pem" "$path_fullchain_pem" "$path_fullchain_pem" "$path_fullchain_pem" 2>&1 | tee -a "$logfile"
 
 # restart webservice to use the new certificates
 restart_webgui 2>&1 | tee -a "$logfile"
