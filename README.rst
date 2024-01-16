@@ -12,6 +12,9 @@ Here, we install certificates from Tailscale, but you can customize these script
 specific application to import any other certificate. This process utilizes the ``acme-command.sh``
 from the acme package, eliminating the need for direct manipulation of the ``config.xml`` file.
 
+compatibility:
+    - tested with pfSense 2.7.2 Release
+
 skills You need to implement these scripts :
     - basic knowledge of the shell
     - some access via ``ssh`` to transfer files and issue commands
