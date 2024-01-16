@@ -73,6 +73,13 @@ step-by-step guide:
        :align: center
 
 
+further information and inspirations :
+    - https://forum.netgate.com/topic/132560/update-ssl-certificate-from-command-line
+    - https://github.com/zxsecurity/pfsense-import-certificate/blob/master/pfsense-import-certificate.php
+    - https://forums.lawrencesystems.com/t/upload-ssl-certificate-to-pfsense-via-ssh-and-restart-webconfigurator/6608/11
+
+
+
 
 -------
 
