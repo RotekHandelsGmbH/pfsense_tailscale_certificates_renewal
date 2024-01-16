@@ -32,10 +32,10 @@ notes:
     - please note that ``pfsense`` needs ``<LF>`` line endings in ``sh`` scripts, ``<CR><LF>`` will not work.
 
 step-by-step guide:
-    - fill out the correct values in our `config.sh`
+    - fill in the correct values in our `config.sh`
     - copy the files for instance to ``/usr/local/pkg/tailscale-cert``.
       We suggest to use ``bitvise`` ssh client and ``sftp``
-    - enter the shell on pfsense, and get root by ``su``
+    - enter the shell on pfsense, and get ``root`` by ``su``
     - set permissions : ``chmod -R 0755 /usr/local/pkg/tailscale-cert``
     - fetch certificates : ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh``
 
