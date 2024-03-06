@@ -18,14 +18,17 @@
 #  - https://github.com/zxsecurity/pfsense-import-certificate/blob/master/pfsense-import-certificate.php
 #  - https://forums.lawrencesystems.com/t/upload-ssl-certificate-to-pfsense-via-ssh-and-restart-webconfigurator/6608/11
 
+SCRIPT_DIR=$(dirname "$0")  # Gets the directory of the script
+ABSOLUTE_PATH=$(realpath "$SCRIPT_DIR")  # Converts it to an absolute path
+
 # Source Settings
-. ./config.sh
+. "$ABSOLUTE_PATH/config.sh"
 
 # import functions
-. ./lib/lib_webgui.sh
-. ./lib/lib_log.sh
-. ./lib/lib_tailscale.sh
-. ./lib/lib_import_certificate.sh
+. "$ABSOLUTE_PATH/lib/lib_webgui.sh"
+. "$ABSOLUTE_PATH/lib/lib_log.sh"
+. "$ABSOLUTE_PATH/lib/lib_tailscale.sh"
+. "$ABSOLUTE_PATH/lib/lib_import_certificate.sh"
 
 # log
 log_header "renew"

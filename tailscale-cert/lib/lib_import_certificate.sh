@@ -3,10 +3,11 @@
 # import the certificates into pfsence config
 import_certificate_to_pfsense_config() {
 	# parameter1: certificatename; the descriptive certificate name used under /system/Certificates/Certificates
-	# parameter2: path_privatekey; the full path to the private key
-	# parameter3: path_cert; the full path to the certificate - You can also use the fullchain certificate here
-	# parameter4: path_ca_cert; the full path to the ca certificate - You can also use the fullchain certificate here
-	# parameter4: path_fullchain_cert; the full path to the fullchain certificate
+	# parameter2: tailscale_domain; the tailscale domain without the host like "tail?????.ts.net"
+	# parameter3: path_privatekey; the full path to the private key
+	# parameter4: path_cert; the full path to the certificate - You can also use the fullchain certificate here
+	# parameter5: path_ca_cert; the full path to the ca certificate - You can also use the fullchain certificate here
+	# parameter6: path_fullchain_cert; the full path to the fullchain certificate
 	# shellcheck disable=SC2039
 	local certificatename="$1"
 	# shellcheck disable=SC2039
@@ -22,3 +23,6 @@ import_certificate_to_pfsense_config() {
 	/usr/local/pkg/acme/acme_command.sh importcert "$certificatename" "$domain" "$path_privatekey" "$path_cert" "$path_ca_cert" "$path_fullchain_cert"
 	echo ""
 }
+
+
+# import_certificate_to_pfsense_config "$certificatename" "$tailscale_domain" "$path_privatekey_pem" "$path_fullchain_pem" "$path_fullchain_pem" "$path_fullchain_pem" 2>&1 | tee -a "$logfile"

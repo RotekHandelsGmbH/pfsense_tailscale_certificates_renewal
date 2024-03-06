@@ -22,6 +22,7 @@ skills You need to implement these scripts :
 
 prerequisites:
     - install and configure package ``tailscale`` on pfsense (if You want to use tailscale vpn)
+    - enable https in the tailscale admin console
     - if You dont use ``tailscale``, some method to copy your certificates to the firewall
 
 preparation:
