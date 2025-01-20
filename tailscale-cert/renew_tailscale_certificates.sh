@@ -48,6 +48,7 @@ import_certificate_to_pfsense_config "$certificatename" "$tailscale_domain" "$pa
 
 # restart webservice to use the new certificates
 restart_webgui 2>&1 | tee -a "$logfile"
+restart_webconfigurator  2>&1 | tee -a "$logfile"
 
 #log
 log_footer "renewed"
