@@ -34,11 +34,11 @@ notes:
 
 step-by-step guide:
     - fill in the correct values in our `config.sh`
-    - copy the files for instance to ``/usr/local/tailscale-cert``.
+    - copy the files for instance to ``/usr/local/pkg/tailscale-cert``.
       We suggest to use ``bitvise`` ssh client and ``sftp``
     - enter the shell on pfsense, and get ``root`` by ``su``
-    - set permissions : ``chmod -R 0755 /usr/local/tailscale-cert``
-    - fetch certificates : ``/usr/local/tailscale-cert/renew_tailscale_certificates.sh``
+    - set permissions : ``chmod -R 0755 /usr/local/pkg/tailscale-cert``
+    - fetch certificates : ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh``
 
     - the ``lets encrypt``  root and intermediate certificate should be now visible in the web gui:
 
@@ -65,11 +65,12 @@ step-by-step guide:
        :align: center
 
     - restart the webConfigurator, either by the pfSense console, or by calling
-    ``/usr/local/tailscale-cert/renew_tailscale_certificates.sh``
+    ``/usr/local/pkg/tailscale-cert/renew_tailscale_certificates.sh``
     again.
 
     - create a cron setting (see last line). You can even run it daily or weekly,
-      since tailscale simply will deliver the same certificates if no renewal is due :
+      since tailscale simply will deliver the same certificates if no renewal is due.
+      In this example, renewal will happen every 5th of every month at 03:16 am
 
     .. image:: images/04_pfsense_certificate_cron.png
        :alt: pfsense certificate cron job
