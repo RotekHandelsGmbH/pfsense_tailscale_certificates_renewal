@@ -13,7 +13,10 @@ specific application to import any other certificate. This process utilizes the 
 from the acme package, eliminating the need for direct manipulation of the ``config.xml`` file.
 
 compatibility:
-    - tested with pfSense 2.7.2 Release
+    - tested with:
+        - pfSense v2.7.2/v2.8.0/v2.8.1 Release
+        - Plugin acme v1.0
+        - Plugin tailscale v0.1.8
 
 skills You need to implement these scripts :
     - basic knowledge of the shell
@@ -91,4 +94,4 @@ further information and inspirations :
 
 Changelog
 
-v.1.0.0     release
+v.2.7.2.0     release
