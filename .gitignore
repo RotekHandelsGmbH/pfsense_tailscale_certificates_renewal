@@ -177,3 +177,6 @@ result
 poetry.lock
 pdm.lock
 uv.lock
+
+# Local, per-developer settings (Claude Code etc.) - never commit
+*.local.json
